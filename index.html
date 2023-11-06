@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/resources/css/index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.3.0/math.min.js></script>
+    <title>Elias-Delta Basic Encoder</title>
+</head>
+<body>
+    <div class="center_text center">
+        <h1>Elias Gamma Basic Encoder</h1>
+    </div class="center"> 
+
+    <div >
+       <br >
+       <br >
+       <br >
+       <br >
+       
+    </div>
+
+
+    <div id="form_container">
+ 
+        <script language="JavaScript" type = "text/javascript"  src="resources/scripts/elias_delta.js"></script>
+        <script language="JavaScript" type = "text/javascript">
+            var number
+            function callElias(){
+                number = document.getElementById("numero").value;
+                var encoded_number = elias_delta_encoder(parseInt(number));
+                document.getElementById("show_encoded").innerHTML= encoded_number;
+            }
+            function seenumber(){
+                console.log(number);
+            }
+            var intervalReference = setInterval(seenumber(), 100);
+            </script>
+        <form >
+            <label class="center_input" for="numero">Ingresa número EL DIABLO</label><br>
+            <input class="center" type="number" id = "numero" name="numero">
+            <button  class="center_input" type="button" onClick="callElias()">Calcular</button>
+        </form>
+        <h3 class= "center_text"id="show_encoded" onload="myFunction()">Encoded number</h3>
+   
+
+    </div>
+</body>
+</html>
