@@ -1,49 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="/resources/css/index.css">
+    <link rel="stylesheet" href="/dist/output.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src=https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.3.0/math.min.js></script>
+
     <title>Elias-Delta Basic Encoder</title>
 </head>
-<body>
-    <div class="center_text center">
-        <h1>Elias Gamma Basic Encoder</h1>
-    </div class="center"> 
-
-    <div >
-       <br >
-       <br >
-       <br >
-       <br >
-       
-    </div>
+<body class="bg-repeat" style="background-image: url(/resources/images/dots.jpg);">
+    <div class = "mt-12 py-24 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"id="form_container">
+        <h1  class="center_text center text-xl font-momo py-4">Codificador Elias delta</h1>
+   
 
 
-    <div id="form_container">
- 
-        <script language="JavaScript" type = "text/javascript"  src="resources/scripts/elias_delta.js"></script>
+
+   
+        
         <script language="JavaScript" type = "text/javascript">
             var number
             function callElias(){
                 number = document.getElementById("numero").value;
-                var encoded_number = elias_delta_encoder(parseInt(number));
-                document.getElementById("show_encoded").innerHTML= encoded_number;
+                let encoded_number = elias_delta_encoder(parseInt(number));
+                
             }
             function seenumber(){
                 console.log(number);
             }
-            var intervalReference = setInterval(seenumber(), 100);
+            let intervalReference = setInterval(seenumber(), 100);
             </script>
         <form >
-            <label class="center_input" for="numero">Ingresa número EL DIABLO</label><br>
-            <input class="center" type="number" id = "numero" name="numero">
-            <button  class="center_input" type="button" onClick="callElias()">Calcular</button>
+            <label class="center_input mt-12 text-indigo-900 font-momo text-lg" for="numero">Ingresa el número a codificar</label><br>
+            <input class="center lock text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4 border-solid hover:border-dotted border-indigo-500/50" style="border-width: 3px;" type="text" id = "numero" name="numero">
         </form>
-        <h3 class= "center_text"id="show_encoded" onload="myFunction()">Encoded number</h3>
+        <h3 class= "py-8 center_text text-indigo-700"id="show_encoded" onload="myFunction()">Número codificado</h3>
    
 
     </div>
+    <script language="JavaScript" type = "text/javascript"  src="resources/scripts/elias_delta.js"></script>
 </body>
 </html>

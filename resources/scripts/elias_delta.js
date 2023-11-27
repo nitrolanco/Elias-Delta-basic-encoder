@@ -22,6 +22,7 @@ function elias_delta_encoder(number)
 }
 function get_binary_representation (number)
 {
+
     let bit_dict = {};
     let bit_representation = "";
     if (number== 0 ){
@@ -50,4 +51,11 @@ function get_binary_representation (number)
 function reverseString(str) {
     return str.split("").reverse().join("");
 }
-console.log(elias_delta_encoder(8));
+
+function ekisde(numero){
+   let num = elias_delta_encoder(numero);
+   document.getElementById("show_encoded").innerHTML= num;
+}
+
+
+document.querySelector("#numero").addEventListener("keyup", () => ekisde(document.getElementById("numero").value));
